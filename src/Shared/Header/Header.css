@@ -1,0 +1,8 @@
+.nav-bar {
+  background-color: #459c98;
+}
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 18px;
+  margin-right: 20px;
+  color: #fff;
+}
