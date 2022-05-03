@@ -1,0 +1,18 @@
+.product-container {
+  border: 1px solid gray;
+}
+.product-container button {
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #0d6efd;
+}
+.products {
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+.products img {
+  width: 100%;
+}

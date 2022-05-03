@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Product from "../Product/Product";
+import "./Inventories.css";
 
 const Inventories = () => {
+  const [products, setProduct] = useState([]);
+
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, []);
+  console.log(products);
   return (
-    <div>
-      <h1>This is Inventories page heir</h1>
+    <div className="inventories-containet">
+      {products.map((product) => (
+        <Product product={product} key={product.id}></Product>
+      ))}
     </div>
   );
 };

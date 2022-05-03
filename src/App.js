@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Blog from "./Pages/Blog/Blog";
-import Header from "./Shared/Header/Header";
+import Header from "./Pages/Shared/Header/Header";
 import Home from "./Pages/Home/Home";
 import Inventories from "./Pages/Inventories/Inventories";
 import SignIn from "./Pages/Sign In/SignIn";
 import SignUp from "./Pages/Sign Up/SignUp";
-import Footer from "./Shared/Footer/Footer";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
