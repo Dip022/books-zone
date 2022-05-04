@@ -6,7 +6,7 @@ const Inventories = () => {
   const [products, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch("products.json")
+    fetch("http://localhost:5000/books")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -14,7 +14,7 @@ const Inventories = () => {
   return (
     <div className="inventories-containet">
       {products.map((product) => (
-        <Product product={product} key={product.id}></Product>
+        <Product product={product} key={product._id}></Product>
       ))}
     </div>
   );
