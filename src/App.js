@@ -7,6 +7,8 @@ import Inventories from "./Pages/Inventories/Inventories";
 import SignIn from "./Pages/Sign In/SignIn";
 import SignUp from "./Pages/Sign Up/SignUp";
 import Footer from "./Pages/Shared/Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
