@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import google from "../../imade/google.png";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
+import Googlesignin from "../Shared/Googlesignin/Googlesignin";
 
 const SignUp = () => {
   const [passError, setPassError] = useState("");
 
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile] = useUpdateProfile(auth);
 
@@ -82,17 +82,16 @@ const SignUp = () => {
                 placeholder="Confirm Password"
               />
               <span className="text-danger mt-2 d-block">{passError}</span>
+              <span className="text-danger mt-2 d-block">
+                {error ? error.message : ""}
+              </span>
               <input className="submit" type="submit" value="Sign In" />
             </form>
-            <p>Have an Account? </p>
+            <p>
+              Have an Account? <Link to="/signin">Sing in</Link>
+            </p>
           </div>
-          <div className="social-login">
-            <span className="text-center d-block">or</span>
-            <button>
-              <img src={google} alt="" />
-              Google Sign In
-            </button>
-          </div>
+          <Googlesignin></Googlesignin>
         </div>
       </Container>
     </div>

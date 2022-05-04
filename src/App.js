@@ -9,6 +9,7 @@ import SignUp from "./Pages/Sign Up/SignUp";
 import Footer from "./Pages/Shared/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route
+          path="/forgot-password"
+          element={<ForgotPassword></ForgotPassword>}
+        ></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
