@@ -15,3 +15,18 @@
   border: none;
   background-color: #0d6efd;
 }
+
+/* responsive tablet */
+
+@media screen and (max-width: 768px) {
+  .manage-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* responsive mobile */
+@media screen and (max-width: 425px) {
+  .manage-item {
+    display: inline-block;
+  }
+}

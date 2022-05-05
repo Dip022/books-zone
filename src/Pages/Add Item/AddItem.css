@@ -1,0 +1,28 @@
+.add-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.update-fild {
+  width: 700px;
+}
+.update-fild input,
+textarea {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 5px;
+}
+.item-submit {
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #0d6efd;
+}
+/* responsive mobile */
+@media screen and (max-width: 425px) {
+  .update-fild {
+    width: 100%;
+  }
+}
