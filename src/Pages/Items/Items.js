@@ -1,8 +1,8 @@
 import React from "react";
 import "./Items.css";
 
-const Items = ({ items }) => {
-  const { name, image, price, Stock, SupplierName, description } = items;
+const Items = ({ book }) => {
+  const { name, image, price, Stock, SupplierName, description } = book;
   return (
     <div className="items-container">
       <div className="items">

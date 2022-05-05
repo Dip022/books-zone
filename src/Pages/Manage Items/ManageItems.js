@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
+import useBooks from "../../hooks/useBooks";
 import Items from "../Items/Items";
 import "./ManageItems.css";
 
 const ManageItems = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
+  const [books] = useBooks();
   return (
     <div className="mb-5">
       <Container>
@@ -20,8 +15,8 @@ const ManageItems = () => {
         </div>
 
         <div className="manage-item">
-          {items.map((item) => (
-            <Items items={item} />
+          {books.map((book) => (
+            <Items book={book} key={book._id} />
           ))}
         </div>
       </Container>

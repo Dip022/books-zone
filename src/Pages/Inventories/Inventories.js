@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useBooks from "../../hooks/useBooks";
 import Product from "../Product/Product";
 import "./Inventories.css";
 
 const Inventories = () => {
-  const [products, setProduct] = useState([]);
-
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, []);
+  const [books] = useBooks();
   return (
     <div className="inventories-containet">
-      {products.map((product) => (
-        <Product product={product} key={product.id}></Product>
+      {books.map((book) => (
+        <Product book={book} key={book._id}></Product>
       ))}
     </div>
   );
