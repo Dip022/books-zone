@@ -1,0 +1,12 @@
+.inventory-container {
+  margin-top: 100px;
+}
+.inventory-container img {
+  width: 250px;
+}
+.inventory-info {
+  display: flex;
+}
+.inventory-details {
+  margin-left: 20px;
+}
