@@ -1,17 +1,21 @@
-import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import Loading from "../Shared/Loading/Loading";
-import "./AddItem.css";
-import auth from "../../firebase.init";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-const AddItem = () => {
-  const [user, loading] = useAuthState(auth);
 
-  if (loading) {
-    return <Loading />;
-  }
+const UpdeteBook = () => {
+  const [book, setBook] = useState({});
 
+  const { bookId } = useParams();
+
+  const { name, price, image, Stock, SupplierName, description } = book;
+
+  useEffect(() => {
+    const url = `http://localhost:5000/book/${bookId}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setBook(data));
+  }, []);
   const handelFormSubmit = (event) => {
     event.preventDefault();
 
@@ -21,34 +25,25 @@ const AddItem = () => {
     const SupplierName = event.target.supplierName.value;
     const image = event.target.productImage.value;
     const description = event.target.shortDescription.value;
-    const email = user.email;
 
-    if (price < 0 || Stock < 0) {
-      return toast.error("Your price and Stock not nagetive value");
-    }
-    const addBook = {
+    const bookInfo = {
       name,
       price,
       Stock,
       SupplierName,
       image,
       description,
-      email,
     };
-
-    fetch("http://localhost:5000/add-book", {
-      method: "POST",
+    const url = `http://localhost:5000/update-book/${bookId}`;
+    fetch(url, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(addBook),
+      body: JSON.stringify(bookInfo),
     })
       .then((res) => res.json())
-      .then((data) => {
-        toast(data.message);
-
-        event.target.reset();
-      });
+      .then((data) => toast.success(data.message));
   };
 
   return (
@@ -61,40 +56,44 @@ const AddItem = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Product Name"
-                required
+                placeholder="Product Name "
+                defaultValue={name}
               />
               <input
                 type="number"
                 name="price"
                 placeholder="Product Price"
-                required
+                defaultValue={price}
               />
               <input
                 type="number"
                 name="stockBook"
                 placeholder="Stock Book"
-                required
+                defaultValue={Stock}
               />
               <input
                 type="text"
                 name="supplierName"
                 placeholder="Supplier Name"
-                required
+                defaultValue={SupplierName}
               />
               <input
                 type="text"
                 name="productImage"
                 placeholder="Product Image URL"
-                required
+                defaultValue={image}
               />
               <textarea
                 type="text"
                 name="shortDescription"
                 placeholder="Short Description"
-                required
+                defaultValue={description}
               ></textarea>
-              <input className="item-submit" type="submit" value="Add Item" />
+              <input
+                className="item-submit"
+                type="submit"
+                value="Update Item"
+              />
             </form>
           </div>
         </div>
@@ -103,4 +102,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default UpdeteBook;

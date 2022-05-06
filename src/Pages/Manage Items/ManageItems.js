@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import useBooks from "../../hooks/useBooks";
 import Items from "../Items/Items";
 import "./ManageItems.css";
 
 const ManageItems = () => {
-  const [books] = useBooks();
+  const [deleteBook, setDeleteBook] = useState(false);
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/books")
+      .then((res) => res.json())
+      .then((data) => setBooks(data));
+  }, [deleteBook]);
   return (
     <div className="mb-5">
       <Container>
@@ -16,7 +23,12 @@ const ManageItems = () => {
 
         <div className="manage-item">
           {books.map((book) => (
-            <Items book={book} key={book._id} />
+            <Items
+              book={book}
+              key={book._id}
+              deleteBook={deleteBook}
+              setDeleteBook={setDeleteBook}
+            />
           ))}
         </div>
       </Container>

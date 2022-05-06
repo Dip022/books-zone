@@ -1,8 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Items.css";
 
-const Items = ({ book }) => {
-  const { name, image, price, Stock, SupplierName, description } = book;
+const Items = ({ book, deleteBook, setDeleteBook }) => {
+  const { _id, name, image, price, Stock, SupplierName, description } = book;
+
+  const navigate = useNavigate();
+  const handelDelete = (id) => {
+    if (window.confirm("are you sure delect book")) {
+      const url = `http://localhost:5000/remove-book/${id}`;
+
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setDeleteBook(!deleteBook);
+          toast(data.message);
+        });
+    }
+  };
+
   return (
     <div className="items-container">
       <div className="items">
@@ -17,8 +36,15 @@ const Items = ({ book }) => {
         <p>Supplier Name: {SupplierName}</p>
       </div>
       <div className="updat-info">
-        <button className="edit">Edit</button>
-        <button className="delete">Delete</button>
+        <button
+          className="edit"
+          onClick={() => navigate(`/updete-book/${_id}`)}
+        >
+          Edit
+        </button>
+        <button className="delete" onClick={() => handelDelete(_id)}>
+          Delete
+        </button>
       </div>
     </div>
   );

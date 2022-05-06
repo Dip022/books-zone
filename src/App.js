@@ -15,6 +15,7 @@ import ManageItems from "./Pages/Manage Items/ManageItems";
 import AddItem from "./Pages/Add Item/AddItem";
 import MyItems from "./Pages/My Items/MyItems";
 import Items from "./Pages/Items/Items";
+import UpdeteBook from "./Pages/Updete Book/UpdeteBokk";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+        <Route path="/updete-book/:bookId" element={<UpdeteBook />}></Route>
       </Routes>
       <Footer />
       <ToastContainer></ToastContainer>
