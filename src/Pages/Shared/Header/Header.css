@@ -1,21 +1,26 @@
 .nav-bar {
   background-color: #459c98;
 }
-.navbar-dark .navbar-nav .nav-link {
+.menu-bar div a {
   font-size: 18px;
   margin-left: 20px;
   color: #fff;
 }
-.logout-btn{
+.logout-btn {
   border: none;
   color: #fff;
-  margin-left:5px;
-  background-color: #459C98;
+  margin-left: 5px;
+  background-color: #459c98;
 }
 
 /* responsive tablet */
 @media screen and (max-width: 991px) {
+  .menu-bar div a {
+    margin-left: 0;
+  }
   .logout-btn {
+    margin-left: 0;
+    padding-left: 0;
     display: flex;
   }
 }

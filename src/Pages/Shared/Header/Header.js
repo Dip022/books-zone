@@ -4,6 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import CustomLink from "../CustomLink/CustomLink";
 import "./Header.css";
 
 const Header = () => {
@@ -21,41 +22,27 @@ const Header = () => {
           <Navbar.Brand href="#home">Books Zone</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto nav-link">
-              <Nav.Link as={Link} to="/home">
-                Home
-              </Nav.Link>
-              <Nav.Link as={Link} to="/inventories">
-                Inventories
-              </Nav.Link>
+            <Nav className="ms-auto nav-link menu-bar">
+              <CustomLink to="/home">Home</CustomLink>
+              <CustomLink to="/inventories">Inventories</CustomLink>
               {user ? (
                 <>
-                  <Nav.Link as={Link} to="/manage-items">
-                    Manage Items
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/add-item">
-                    Add Item
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/my-items">
-                    My Items
-                  </Nav.Link>
+                  <CustomLink to="/manage-items">Manage Items</CustomLink>
+                  <CustomLink to="/add-item">Add Item</CustomLink>
+                  <CustomLink to="/my-items">My Items</CustomLink>
                 </>
               ) : (
                 <></>
               )}
-              <Nav.Link as={Link} to="/blog">
-                Blog
-              </Nav.Link>
+              <CustomLink to="/blog">Blog</CustomLink>
               {user ? (
-                <button className="logout-btn" onClick={() => signOut(auth)}>Logout</button>
+                <button className="logout-btn" onClick={() => signOut(auth)}>
+                  Logout
+                </button>
               ) : (
                 <>
-                  <Nav.Link as={Link} to="/signin">
-                    Sign In
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/signup">
-                    Sign Up
-                  </Nav.Link>
+                  <CustomLink to="/signin">Sign In</CustomLink>
+                  <CustomLink to="/signup">Sign Up</CustomLink>
                 </>
               )}
             </Nav>
