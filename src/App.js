@@ -26,21 +26,59 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/inventories" element={<Inventories />}></Route>
-        <Route path="/inventory" element={<Inventory />}></Route>
-        <Route path="/manage-items" element={<ManageItems />}></Route>
+        <Route
+          path="/inventory"
+          element={
+            <RequireAuth>
+              <Inventory />{" "}
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/manage-items"
+          element={
+            <RequireAuth>
+              <ManageItems />{" "}
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/items" element={<Items />}></Route>
-        <Route path="/add-item" element={<AddItem />}></Route>
-        <Route path="/my-items" element={<MyItems />}></Route>
-        <Route path="/inventory/:bookId" element={
-        <RequireAuth>
-          <Inventory />
-          </RequireAuth>
-        }></Route>
+        <Route
+          path="/add-item"
+          element={
+            <RequireAuth>
+              <AddItem />{" "}
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/my-items"
+          element={
+            <RequireAuth>
+              <MyItems />{" "}
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/inventory/:bookId"
+          element={
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-        <Route path="/updete-book/:bookId" element={<UpdeteBook />}></Route>
+        <Route
+          path="/updete-book/:bookId"
+          element={
+            <RequireAuth>
+              <UpdeteBook />
+            </RequireAuth>
+          }
+        ></Route>
       </Routes>
       <Footer />
       <ToastContainer></ToastContainer>
