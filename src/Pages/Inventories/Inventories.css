@@ -6,7 +6,6 @@
 }
 
 /* responsive tablet */
-
 @media screen and (max-width: 768px) {
   .inventories-containet {
     grid-template-columns: repeat(2, 1fr);

@@ -1,27 +1,31 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import "./SignIn.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
 import Googlesignin from "../Shared/Googlesignin/Googlesignin";
 
 const SignIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   if (loading) {
     return <Loading></Loading>;
   }
 
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate("/home");
-  //   }
-  // }, []);
+  if (user) {
+    navigate(from, { replace: true });
+    toast.success("Sign in success");
+  }
 
   const handelSignIn = async (event) => {
     event.preventDefault();
@@ -45,8 +49,6 @@ const SignIn = () => {
 
         localStorage.setItem("access_token", accessToken);
       });
-
-    toast.success("Sign in success");
   };
   return (
     <div className="signIn-container ">

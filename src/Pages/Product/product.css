@@ -4,17 +4,49 @@
 }
 .product-container button {
   width: 100%;
+  position: relative;
   border: none;
   border-radius: 0 0 5px 5px;
   color: #fff;
   font-size: 18px;
   padding: 10px;
   transition: .5s;
+  overflow: hidden;
+  background-color: #357ce6;
+}
+.product-container button::after{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  top: 0;
+  left: -50%;
+  transition: .8s;
+  border-radius: 0 0 0 5px;
   background-color: #0d6efd;
 }
-.product-container button:hover{
-  transition: .5s;
-  background-color: orange;
+.product-container button:hover::after{
+  position: absolute;
+  left: 0;
+  transition: .8s;
+  
+}
+.product-container button::before{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  top: 0;
+  right: -50%;
+  transition: .8s;
+  border-radius: 0 0 5px 0;
+  background-color: #086bff;
+}
+.product-container button:hover::before{
+  position: absolute;
+  right: 0;
+  transition: .8s;
+  
 }
 
 .products {
@@ -24,4 +56,8 @@
 .products img {
   width: 100%;
   border-radius: 5px;
+}
+.btn-text{
+  position: relative;
+  z-index: 2;
 }

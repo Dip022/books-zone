@@ -6,7 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Loading from "../Shared/Loading/Loading";
 import Googlesignin from "../Shared/Googlesignin/Googlesignin";
 
@@ -19,11 +19,16 @@ const SignUp = () => {
   const [updateProfile] = useUpdateProfile(auth);
 
   const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   if (loading) {
     return <Loading></Loading>;
   }
   if (user) {
-    navigate("/home");
+    navigate(from, { replace: true });
   }
 
   const handelSignUp = async (event) => {
