@@ -21,7 +21,7 @@ const Product = ({ book }) => {
         <p>Supplier Name: {supplierName}</p>
       </div>
       <button onClick={() => navigate(`/inventory/${_id}`)}>
-        Stock Update
+        <span className="btn-text">Stock Update</span>
       </button>
     </div>
   );

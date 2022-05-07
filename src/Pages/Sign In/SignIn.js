@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import "./SignIn.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -11,22 +11,41 @@ import Googlesignin from "../Shared/Googlesignin/Googlesignin";
 const SignIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  console.log(error);
   const navigate = useNavigate();
 
   if (loading) {
     return <Loading></Loading>;
   }
 
-  if (user) {
-    navigate("/home");
-  }
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/home");
+  //   }
+  // }, []);
 
-  const handelSignIn = (event) => {
+  const handelSignIn = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+
     signInWithEmailAndPassword(email, password);
+
+    fetch("http://localhost:5000/singin", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const accessToken = data.accessToken;
+
+        console.log("access", accessToken);
+
+        localStorage.setItem("access_token", accessToken);
+      });
+
     toast.success("Sign in success");
   };
   return (

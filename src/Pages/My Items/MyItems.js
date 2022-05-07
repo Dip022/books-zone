@@ -6,16 +6,25 @@ import Items from "../Items/Items";
 
 const MyItems = () => {
   const [myBooks, setMyBooks] = useState([]);
-  console.log("adfadf", myBooks);
   const [user] = useAuthState(auth);
 
+  console.log("myBooks", myBooks);
   const email = user?.email;
   useEffect(() => {
     const url = `http://localhost:5000/my-book/${email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setMyBooks(data));
-  }, [email]);
+    try {
+      fetch(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setMyBooks(data));
+    } catch (error) {
+      console.log(error.response.status);
+      console.log(error);
+    }
+  }, []);
   return (
     <div className="my-items-container mt-5 mb-5">
       <Container>

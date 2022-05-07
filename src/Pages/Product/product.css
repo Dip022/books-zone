@@ -1,18 +1,27 @@
 .product-container {
   border: 1px solid gray;
+  border-radius: 6px;
 }
 .product-container button {
   width: 100%;
   border: none;
+  border-radius: 0 0 5px 5px;
   color: #fff;
   font-size: 18px;
   padding: 10px;
+  transition: .5s;
   background-color: #0d6efd;
 }
+.product-container button:hover{
+  transition: .5s;
+  background-color: orange;
+}
+
 .products {
   border-radius: 5px;
   padding: 10px 10px;
 }
 .products img {
   width: 100%;
+  border-radius: 5px;
 }
