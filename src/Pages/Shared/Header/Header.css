@@ -1,6 +1,10 @@
 .nav-bar {
   background-color: #459c98;
 }
+.logo {
+  width: 115px;
+  padding: 10px;
+}
 .menu-bar div a {
   font-size: 18px;
   margin-left: 20px;

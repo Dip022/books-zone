@@ -17,7 +17,7 @@ const Home = () => {
       <Container>
         <h1 className="mt-5 mb-5 text-center">Inventory</h1>
         <div className="inventories-containet">
-          {books.slice(0, 3).map((book) => (
+          {books.slice(0, 6).map((book) => (
             <Product book={book} key={book._id}></Product>
           ))}
         </div>
