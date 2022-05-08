@@ -2,9 +2,9 @@
 
 ## [website Link](https://books-zone-88973.web.app/)
 
-Client Side link: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022)
+Client Side code link: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022)
 
-Server Side link: [https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Dip022](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Dip022)
+Server Side code link: [https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Dip022](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Dip022)
 
 # Website Details
 

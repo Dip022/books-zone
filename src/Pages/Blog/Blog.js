@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import "./Blog.css";
 
 const Blog = () => {
-  console.log("hello");
   return (
     <div className="mb-5">
       <h1 className="mt-5 mb-5 text-center">Bolg</h1>
