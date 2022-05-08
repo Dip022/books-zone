@@ -3,12 +3,11 @@ import { Container } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Items from "../Items/Items";
+import "./MyItems.css";
 
 const MyItems = () => {
   const [myBooks, setMyBooks] = useState([]);
   const [user] = useAuthState(auth);
-
-  console.log("myBooks", myBooks);
   const email = user?.email;
   useEffect(() => {
     const url = `https://radiant-falls-24615.herokuapp.com/my-book/${email}`;
@@ -22,16 +21,17 @@ const MyItems = () => {
         .then((data) => setMyBooks(data));
     } catch (error) {
       console.log(error.response.status);
-      console.log(error);
     }
   }, []);
   return (
     <div className="my-items-container mt-5 mb-5">
       <Container>
         <h1 className="text-center">My Items</h1>
-        {myBooks.map((book) => (
-          <Items book={book} key={book._id}></Items>
-        ))}
+        <div className="my-item">
+          {myBooks.map((book) => (
+            <Items book={book} key={book._id}></Items>
+          ))}
+        </div>
       </Container>
     </div>
   );

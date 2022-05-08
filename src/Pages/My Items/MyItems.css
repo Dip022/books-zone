@@ -1,0 +1,17 @@
+.my-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+/* responsive tablet */
+@media screen and (max-width: 991px) {
+  .my-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* responsive mobile */
+@media screen and (max-width: 425px) {
+  .my-item {
+    display: inline-block;
+  }
+}
