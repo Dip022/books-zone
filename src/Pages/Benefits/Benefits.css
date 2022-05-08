@@ -1,0 +1,11 @@
+.benefits {
+  display: flex;
+}
+.benefits img {
+  width: 45px;
+  margin-right: 10px;
+}
+.benefits h6 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

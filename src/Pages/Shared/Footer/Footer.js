@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import Benefits from "../../Benefits/Benefits";
 import Subscribe from "../../Subscribe/Subscribe";
 
 const Footer = () => {
@@ -7,6 +8,7 @@ const Footer = () => {
     <div>
       <Container>
         <Subscribe></Subscribe>
+        <Benefits></Benefits>
         <p>
           <small>Copyright © by Fruits Strip Warehouse - 2022</small>
         </p>
