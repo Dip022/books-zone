@@ -34,7 +34,7 @@ const SignIn = () => {
 
     signInWithEmailAndPassword(email, password);
 
-    fetch("http://localhost:5000/singin", {
+    fetch("https://radiant-falls-24615.herokuapp.com/singin", {
       method: "POST",
       headers: {
         "content-type": "application/json",

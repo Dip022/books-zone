@@ -12,7 +12,7 @@ const Inventory = () => {
   const { bookId } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/book/${bookId}`)
+    fetch(`https://radiant-falls-24615.herokuapp.com/book/${bookId}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [bookId, updateDelivery]);
@@ -26,7 +26,7 @@ const Inventory = () => {
     }
     const addStock = parseInt(book.Stock) + parseInt(stock);
     const updateProduct = { Stock: addStock };
-    const url = `http://localhost:5000/stock-book/${book._id}`;
+    const url = `https://radiant-falls-24615.herokuapp.com/stock-book/${book._id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -44,7 +44,7 @@ const Inventory = () => {
   const handelDelivered = (id) => {
     const delivered = book.Stock - 1;
     const updateProduct = { Stock: delivered };
-    const url = `http://localhost:5000/delivery-book/${id}`;
+    const url = `https://radiant-falls-24615.herokuapp.com/delivery-book/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -4,9 +4,24 @@
   margin-bottom: 50px;
   gap: 30px;
 }
-
+.count-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.count-page button {
+  font-size: 18px;
+  margin-right: 10px;
+  border: 2px solid orange;
+  background-color: #fff;
+}
+.btn-peges {
+  font-size: 18px;
+  margin-right: 10px;
+  border: 2px solid orange;
+  background-color: #fff;
+}
 /* responsive tablet */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .inventories-containet {
     grid-template-columns: repeat(2, 1fr);
   }

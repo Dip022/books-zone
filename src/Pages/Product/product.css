@@ -1,8 +1,15 @@
 .product-container {
+  height: 600px;
+  position: relative;
   border: 1px solid gray;
   border-radius: 6px;
 }
-.product-container button {
+.stock-update {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.stock-update button {
   width: 100%;
   position: relative;
   border: none;
@@ -10,54 +17,71 @@
   color: #fff;
   font-size: 18px;
   padding: 10px;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
   background-color: #357ce6;
 }
-.product-container button::after{
+.stock-update button::after {
   position: absolute;
   width: 50%;
   height: 100%;
   content: "";
   top: 0;
   left: -50%;
-  transition: .8s;
+  transition: 0.8s;
   border-radius: 0 0 0 5px;
   background-color: #0d6efd;
 }
-.product-container button:hover::after{
+.stock-update button:hover::after {
   position: absolute;
   left: 0;
-  transition: .8s;
-  
+  transition: 0.8s;
 }
-.product-container button::before{
+.stock-update button::before {
   position: absolute;
   width: 50%;
   height: 100%;
   content: "";
   top: 0;
   right: -50%;
-  transition: .8s;
+  transition: 0.8s;
   border-radius: 0 0 5px 0;
   background-color: #086bff;
 }
-.product-container button:hover::before{
+.stock-update button:hover::before {
   position: absolute;
   right: 0;
-  transition: .8s;
-  
+  transition: 0.8s;
 }
 
 .products {
   border-radius: 5px;
   padding: 10px 10px;
 }
-.products img {
+.products h4 {
+  margin-top: 10px;
+}
+.book-img {
   width: 100%;
+  text-align: center;
+}
+.book-img img {
+  width: 300px;
+  height: 300px;
   border-radius: 5px;
 }
-.btn-text{
+.products p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.btn-text {
   position: relative;
   z-index: 2;
+}
+
+/* responsive mobile */
+@media screen and (max-width: 425px) {
+  .product-container {
+    margin-bottom: 30px;
+  }
 }

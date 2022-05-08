@@ -9,7 +9,7 @@ const Items = ({ book, deleteBook, setDeleteBook }) => {
   const navigate = useNavigate();
   const handelDelete = (id) => {
     if (window.confirm("are you sure delect book")) {
-      const url = `http://localhost:5000/remove-book/${id}`;
+      const url = `https://radiant-falls-24615.herokuapp.com/remove-book/${id}`;
 
       fetch(url, {
         method: "DELETE",

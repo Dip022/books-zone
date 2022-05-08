@@ -11,7 +11,7 @@ const UpdeteBook = () => {
   const { name, price, image, Stock, SupplierName, description } = book;
 
   useEffect(() => {
-    const url = `http://localhost:5000/book/${bookId}`;
+    const url = `https://radiant-falls-24615.herokuapp.com/book/${bookId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBook(data));
@@ -34,7 +34,7 @@ const UpdeteBook = () => {
       image,
       description,
     };
-    const url = `http://localhost:5000/update-book/${bookId}`;
+    const url = `https://radiant-falls-24615.herokuapp.com/update-book/${bookId}`;
     fetch(url, {
       method: "PUT",
       headers: {

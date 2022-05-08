@@ -36,7 +36,7 @@ const AddItem = () => {
       email,
     };
 
-    fetch("http://localhost:5000/add-book", {
+    fetch("https://radiant-falls-24615.herokuapp.com/add-book", {
       method: "POST",
       headers: {
         "content-type": "application/json",
