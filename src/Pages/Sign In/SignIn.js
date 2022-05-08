@@ -45,8 +45,6 @@ const SignIn = () => {
       .then((data) => {
         const accessToken = data.accessToken;
 
-        console.log("access", accessToken);
-
         localStorage.setItem("access_token", accessToken);
       });
   };
@@ -81,7 +79,10 @@ const SignIn = () => {
             <p>
               Need an Account? <Link to="/signup">Sing Up</Link>
             </p>
-            <button onClick={() => navigate("/forgot-password")}>
+            <button
+              className="forgot"
+              onClick={() => navigate("/forgot-password")}
+            >
               Forgot Password?{" "}
             </button>
           </div>

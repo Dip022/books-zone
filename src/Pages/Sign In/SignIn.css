@@ -90,6 +90,11 @@
   width: 25px;
   margin-right: 10px;
 }
+.forgot {
+  border: none;
+  color: #0d6efd;
+  background-color: #fff;
+}
 /* responsive mobile */
 @media screen and (max-width: 425px) {
   .form-area {
