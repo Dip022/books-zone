@@ -26,7 +26,7 @@ const MyItems = () => {
   return (
     <div className="my-items-container mt-5 mb-5">
       <Container>
-        <h1 className="text-center">My Items</h1>
+        <h1 className="text-center  mt-5 mb-5">My Items</h1>
         <div className="my-item">
           {myBooks.map((book) => (
             <Items book={book} key={book._id}></Items>

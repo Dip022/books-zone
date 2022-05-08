@@ -34,7 +34,7 @@ const Items = ({ book, deleteBook, setDeleteBook }) => {
           {price}
         </p>
         <p>Description: {description}</p>
-        <p>Stock: {Stock}</p>
+        <p>Stock: {Stock} (books)</p>
         <p>Supplier Name: {SupplierName}</p>
       </div>
       <div className="updat-info">

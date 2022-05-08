@@ -61,9 +61,10 @@ const Inventory = () => {
 
   return (
     <div className="inventory-container">
+      <h1 className="mb-5 text-center">inventory</h1>
       <Container>
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <div className="inventory-info">
               <img src={book.image} alt="" />
               <div className="inventory-details">
@@ -77,16 +78,16 @@ const Inventory = () => {
                   Stock:
                   <span> {book.Stock} (books)</span>
                 </p>
-                <p>Supplier Name: {book.supplierName}</p>
+                <p>Supplier Name: {book.SupplierName}</p>
                 <button onClick={() => handelDelivered(book._id)}>
                   DELIVERED
                 </button>
               </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <h3>Restock the items</h3>
-            <div>
+          <div className="col-lg-4 stock-reduce">
+            <h3 className="mb-3">Restock the items</h3>
+            <div className="submit-stock">
               <form onSubmit={handelStock}>
                 <input
                   type="number"
@@ -94,7 +95,11 @@ const Inventory = () => {
                   placeholder="Stock Count book"
                   required
                 />
-                <input type="submit" value="Add Stoc" />
+                <input
+                  className="submit-count"
+                  type="submit"
+                  value="Add Stoc"
+                />
               </form>
             </div>
           </div>

@@ -19,7 +19,7 @@ const Product = ({ book }) => {
           Price: <span>$</span>
           {price}
         </p>
-        <p>Stock: {Stock}</p>
+        <p>Stock: {Stock} (books)</p>
         <p>Supplier Name: {SupplierName}</p>
       </div>
       <div className="stock-update">

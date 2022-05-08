@@ -1,12 +1,55 @@
 .inventory-container {
   margin-top: 100px;
 }
-.inventory-container img {
-  width: 250px;
-}
 .inventory-info {
   display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #ffedd5;
+}
+.inventory-info img {
+  width: 250px;
+  margin-bottom: 30px;
 }
 .inventory-details {
   margin-left: 20px;
+}
+.inventory-details button {
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #357ce6;
+}
+.stock-reduce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 40px;
+  background-color: #fef9c3;
+}
+.submit-stock {
+  width: 100%;
+}
+.submit-stock input {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px 5px;
+  display: inherit;
+  margin-bottom: 20px;
+}
+.submit-count {
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #22c55e;
+}
+
+/* responsive tablet */
+@media screen and (max-width: 768px) {
+  .inventory-info {
+    flex-direction: column;
+  }
 }
