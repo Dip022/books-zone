@@ -25,7 +25,9 @@ const Items = ({ book, deleteBook, setDeleteBook }) => {
   return (
     <div className="items-container">
       <div className="items">
-        <img src={image} alt="" />
+        <div className="book-img">
+          <img src={image} alt="" />
+        </div>
         <h5>Book Name: {name}</h5>
         <p>
           Price: <small>$</small>
