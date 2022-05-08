@@ -5,6 +5,8 @@ import Slider from "../Slider/Slider";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import Subscribe from "../Subscribe/Subscribe";
+import Benefits from "../Benefits/Benefits";
 
 const Home = () => {
   const [books] = useBooks();
@@ -28,6 +30,8 @@ const Home = () => {
           </button>
         </div>
       </Container>
+      <Subscribe></Subscribe>
+      <Benefits></Benefits>
     </div>
   );
 };

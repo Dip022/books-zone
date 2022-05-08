@@ -1,0 +1,49 @@
+.footer {
+  padding: 50px 0 20px 0;
+  background-color: #622eee;
+}
+.information ul {
+  list-style: none;
+}
+.information ul li {
+  display: flex;
+  margin-top: 5px;
+}
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+.information svg {
+  width: 26px;
+  color: #fff;
+  margin-right: 10px;
+}
+.information h6 {
+  margin-top: 5px;
+  color: #fff;
+}
+.call {
+  width: 22px;
+  margin-right: 10px;
+}
+.information a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+.social-media h6 {
+  color: #fff;
+}
+.social-media ul {
+  display: flex;
+  list-style: none;
+}
+.social-media ul li img {
+  width: 30px;
+  margin-right: 15px;
+}
+.playstore {
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 30px;
+}
