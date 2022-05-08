@@ -1,6 +1,6 @@
 # Books Zone
 
-## [website Link](https://splendorous-beijinho-fa2070.netlify.app/)
+## [website Link](https://books-zone-88973.web.app/)
 
 Client Side link: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Dip022)
 

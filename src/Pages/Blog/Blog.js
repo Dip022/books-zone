@@ -53,8 +53,13 @@ const Blog = () => {
           </h2>
           <h6>
             <span className="font-bold">Ans: </span>
-            jwt is called a token. If a user logs in to the website through jwt
-            then he creates a token. It establishes a relationship with email.
+            The data is stored through SQL database. SQL is called a table base
+            database. So its data is in the form of table s.
+            <br />
+            <br />
+            There are many types of data in the database that we can access this
+            data in an easy way but we get SQL data in the form of tables or
+            forms.
           </h6>
         </div>
       </Container>
